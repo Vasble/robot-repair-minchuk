@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4897876262723941662}
   - component: {fileID: 8375154035425770163}
   - component: {fileID: -3748723766179873155}
-  m_Layer: 0
+  - component: {fileID: 7784909283387223333}
+  m_Layer: 6
   m_Name: Gerou
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -848373059, guid: 5fe2ecbb84e41974bb3de411d0adf897, type: 3}
+  m_Sprite: {fileID: 1820491436, guid: f1c78d47fa0e77346b55eb8a4fa4ccf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,6 +108,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696f07bfd1890814c91fd40e027b837f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  LaunchAction:
+    m_Name: Launch
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c3579d6f-da7e-4d21-ae83-4354448bf487
+    m_Processors: InvertVector3
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 33d6abb2-f04f-4545-993f-e6057bccafd9
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Launch
+      m_Flags: 0
+    m_Flags: 0
   MoveAction:
     m_Name: Move
     m_Type: 0
@@ -236,9 +254,11 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
-  maxHealth: 5
-  currentHealth: 1
   speed: 3
+  maxHealth: 5
+  projectilePrefab: {fileID: 1422923462684396098, guid: b533ce8ecf849a34a895658c68cc00dc,
+    type: 3}
+  timeInvincible: 2
 --- !u!50 &8375154035425770163
 Rigidbody2D:
   serializedVersion: 5
@@ -300,18 +320,40 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.45991486, y: 0.5033326}
+  m_Offset: {x: -0.0076273084, y: 0.43420568}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.7066667, y: 1.7066667}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1.7066667, y: 1.7066667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.786837, y: 0.8083334}
+  m_Size: {x: 0.6090821, y: 0.6700795}
   m_EdgeRadius: 0
+--- !u!95 &7784909283387223333
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714564738992421385}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15c93a869dd14df478b6eebf0c4a9b3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9077874110872161767
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +366,7 @@ GameObject:
   - component: {fileID: 332259776954984128}
   - component: {fileID: 5257166563971827539}
   - component: {fileID: 361844764107033315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
